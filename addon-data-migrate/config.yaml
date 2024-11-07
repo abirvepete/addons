@@ -1,0 +1,21 @@
+name: Addon数据迁移工具
+version: 0.3.2
+slug: addonDataMigrate
+codenotary: wghaos@163.com
+description: '解决不同仓库中addons的数据迁移'
+url: https://gitcode.com/waxgourd/addons
+image: r.hassbus.com/wghaos/addon-data-migrate
+init: false
+arch:
+  - aarch64
+  - amd64
+ingress: true
+ingress_port: 80
+panel_icon: 'mdi:file-move'
+map:
+  - all_addon_configs:rw
+  - backup:rw
+apparmor: false
+docker_api: true
+startup: services
+boot: manual

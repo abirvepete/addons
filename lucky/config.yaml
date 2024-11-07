@@ -1,0 +1,24 @@
+name: Lucky
+version: 2.13.4  # 将版本号更新至最新
+slug: lucky
+codenotary: abirvepete
+description: '替代socat,支持IPv6的TCP/UDP内网转发至IPv4，并提供动态域名服务'
+url: https://github.com/abirvepete/addons
+image: gdy666/lucky
+init: false
+boot: auto  # 更改为 "auto"，使插件在系统启动后自动启动
+arch:
+  - aarch64
+  - amd64
+  - armv7  # 增加 armv7 以便在更多平台运行
+webui: "http://[HOST]:[PORT:16601]"  # 取消注释，启用 Web UI 配置，提供更友好的访问方式
+ports:
+  16601/tcp: 16601
+ingress: true
+ingress_port: 16601
+panel_icon: 'mdi:server-network'
+host_network: true
+options:
+  default_interface: eth0  # 添加可选配置项，允许用户自定义接口
+schema:
+  default_interface: str?  # 使用可选的字符串类型
